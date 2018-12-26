@@ -1,0 +1,24 @@
+%%Filter
+filt = imread ('filter.png');
+subplot(1,6,1), imshow(filt);
+title('Original');
+%%gaussian 2D
+filt_gauss = imgaussfilt(filt);
+subplot(1,6,2), imshow(filt_gauss);
+title('Gaussian');
+%%Box filter
+filt_box = imboxfilt(filt);
+subplot(1,6,3), imshow(filt_box);
+title('Box');
+%%Median
+filt_med = medfilt2(filt);
+subplot(1,6,4), imshow(filt_med);
+title('Median');
+%%Minimum
+filt_min = ordfilt2(filt,1,ones(3,3));
+subplot(1,6,5), imshow(filt_min);
+title('Minimum');
+%%maximum
+filt_max = ordfilt2(filt,9,ones(3,3));
+subplot(1,6,6), imshow(filt_max);
+title('Maximum');
